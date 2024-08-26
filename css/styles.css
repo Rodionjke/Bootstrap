@@ -248,6 +248,7 @@ footer {
 }
 footer .container {
   padding: 62px 0 30px;
+  position: relative;
 }
 footer .second-ul {
   list-style: none;
@@ -301,7 +302,6 @@ footer .second-ul li:nth-of-type(3) a {
 }
 footer .first-ul {
   list-style: none;
-  position: relative;
 }
 footer .first-ul::before {
   width: 100%;
@@ -309,7 +309,18 @@ footer .first-ul::before {
   background: #e6e6f0;
   content: "";
   position: absolute;
-  top: -30px;
+  top: 30px;
+  left: 30px;
+}
+@media screen and (max-width: 1042px) {
+  footer .first-ul::before {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer .first-ul::before {
+    width: 90%;
+  }
 }
 footer .first-ul li a {
   font-family: "Montserrat", sans-serif;
@@ -349,6 +360,41 @@ footer .first-ul li:nth-of-type(2) a:hover {
   text-transform: uppercase;
   color: #24a3ff;
   text-decoration: none;
+}
+@media screen and (max-width: 992px) {
+  footer .first-ul li:nth-of-type(3) {
+    position: absolute;
+    bottom: -10px;
+    right: 29%;
+  }
+}
+@media screen and (max-width: 767px) {
+  footer .first-ul li:nth-of-type(3) {
+    position: absolute;
+    bottom: -10px;
+    right: 18%;
+  }
+}
+@media screen and (max-width: 491px) {
+  footer .first-ul li:nth-of-type(3) {
+    position: absolute;
+    bottom: -10px;
+    right: 15%;
+  }
+}
+@media screen and (max-width: 410px) {
+  footer .first-ul li:nth-of-type(3) {
+    position: absolute;
+    bottom: -10px;
+    right: 10%;
+  }
+}
+@media screen and (max-width: 361px) {
+  footer .first-ul li:nth-of-type(3) {
+    position: absolute;
+    bottom: -10px;
+    right: 5%;
+  }
 }
 footer .first-ul li:nth-of-type(3) a {
   font-family: "Montserrat", sans-serif;
