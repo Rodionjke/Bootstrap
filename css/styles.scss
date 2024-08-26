@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 $main-font:"Montserrat", sans-serif;
+$main-color: #f5f5fa;
+$hover-color: #f0145a;
+$main-font-color: #b3b3ba;
+$hover-color-background: #fff;
 @mixin pseudo($flex,$w, $h){
   display: $flex;
   width: $w;
@@ -16,7 +20,7 @@ header{
   }
   .list-group{
     @media screen and (max-width: 766px){
-      background: #f5f5fa;
+      background: $main-color;
     }
   }
   .list-group-item {
@@ -25,43 +29,43 @@ header{
     font-size: 12px;
     letter-spacing: 0.08em;
     text-align: center;
-    color: #b3b3ba;
+    color: $main-font-color;
     border: none;
     padding: 5px 7px;
     transition: 0.3s;
     min-width: 35px;
     @media screen and (max-width: 766px){
-      background: #f5f5fa;
+      background: $main-color;
     }
   }
   .list-group li:nth-of-type(1):hover{
     border-radius: 8px;
     padding: 5px 7px !important;
-    background: #f0145a;
-    color: #fff;
+    background: $hover-color;
+    color: $hover-color-background;
     text-align: center;
   }
   .list-group li:nth-of-type(2):hover{
     border-radius: 8px;
     padding: 5px 7px !important;
-    background: #f0145a;
-    color: #fff;
+    background: $hover-color;
+    color: $hover-color-background;
   }
   .list-group li:nth-of-type(3):hover{
     border-radius: 8px;
     padding: 5px 7px !important;
-    background: #f0145a;
-    color: #fff;
+    background: $hover-color;
+    color: $hover-color-background;
   }
   .list-group li:nth-of-type(4){
     font-family: $main-font;
     font-weight: 400;
     font-size: 16px;
     text-align: right;
-    color: #b3b3ba;
+    color: $main-font-color;
     padding: 2.5px 0;
     &:hover{
-      color: #f0145a;
+      color: $hover-color;
     }
     a:before{
       @include pseudo(inline-flex, 6px, 7px);
@@ -81,10 +85,10 @@ header{
     font-weight: 700;
     font-size: 16px;
     text-align: center;
-    color: #b3b3ba;
+    color: $main-font-color;
     padding: 2.5px 0;
     & :hover{
-        color: #f0145a;
+        color: $hover-color;
     }
   }
   .list-group li:last-of-type{
@@ -103,11 +107,11 @@ header{
     min-height: 43px;
     border-bottom: solid 1px transparent;
     & :hover{
-      color: #f0145a;
-      border-bottom: solid 1px #f0145a;
+      color: $hover-color;
+      border-bottom: solid 1px $hover-color;
     }
     &:hover a {
-      color: #f0145a;
+      color: $hover-color;
     }
     .nav-link{
       font-family: $main-font;
@@ -129,7 +133,7 @@ header{
   }
 }
 .news {
-  background: #f5f5fa;
+  background: $main-color;
   .btn-primary {
       padding: 18px 30px;
       box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.5);
@@ -138,11 +142,11 @@ header{
       font-weight: 700;
       font-size: 16px;
       text-align: center;
-      color: #fff;
+      color: $hover-color-background;
       border-radius: 12px;
       transition: .5s;
     &:hover{
-      background: #fff;
+      background: $hover-color-background;
       color: #24a3ff;
     }
     }
@@ -171,14 +175,14 @@ header{
   }
 }
 .btn-check+.btn:hover {
-    background: #f5f5fa;
+    background: $main-color;
     border-radius: 10px;
     padding: 8px 30px 10px 30px;
   }
 .btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
   color: #323264;
-  background-color: #fff;
-  border-color: #fff;
+  background-color: $hover-color-background;
+  border-color: $hover-color-background;
   border-radius: 10px;
   padding: 8px 30px 10px 30px;
 }
@@ -208,7 +212,7 @@ header{
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #b3b3ba;
+    color: $main-font-color;
     &::after{
       width: 100%;
       height: 4px;
@@ -227,7 +231,7 @@ header{
   }
 }
 footer {
-  background: #f5f5fa;
+  background: $main-color;
   .container {
     padding: 62px 0 30px;
   }
@@ -235,11 +239,8 @@ footer {
     list-style: none;
     li:nth-of-type(2){
       &::before{
-        content: "";
+        @include pseudo(inline-flex, 6px, 7px);
         background-image: url("../img/dot_separator_footer.svg");
-        width: 6px;
-        height: 7px;
-        display: inline-flex;
         margin-right: 10px;
         padding-top: 9px;
         background-repeat: no-repeat;
@@ -248,11 +249,8 @@ footer {
         }
       }
       &::after{
-        content: "";
+        @include pseudo(inline-flex, 6px, 7px);
         background-image: url("../img/dot_separator_footer.svg");
-        width: 6px;
-        height: 7px;
-        display: inline-flex;
         margin-left: 10px;
         padding-top: 9px;
         background-repeat: no-repeat;
@@ -304,11 +302,8 @@ footer {
 
     li:nth-of-type(2) {
       &::before {
-        content: "";
+        @include pseudo(inline-flex, 6px, 7px);
         background-image: url("../img/dot_separator_footer.svg");
-        width: 6px;
-        height: 7px;
-        display: inline-flex;
         margin-right: 10px;
         @media screen and (max-width: 768px){
           display: none;
@@ -342,7 +337,7 @@ footer {
         font-weight: 400;
         font-size: 16px;
         text-align: right;
-        color: #b3b3ba;
+        color: $main-font-color;
       }
     }
   }
